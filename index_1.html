@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thiệp cưới Peter &amp; Smith</title>
+<meta name="description" content="Trân trọng kính mời bạn tới dự lễ cưới của Peter &amp; Smith, 16:00 ngày 01/01/2040 tại InterContinental Phu Quoc Long Beach Resort.">
+<meta property="og:title" content="Thiệp cưới Peter &amp; Smith">
+<meta property="og:description" content="16:00 · 01/01/2040 · InterContinental Phu Quoc Long Beach Resort">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+/* Ý tưởng bố cục: một cột hẹp như tờ thiệp, bìa xanh biển đậm ở đầu, các phần sáng bên dưới ngăn bằng đường sóng. */
+:root {
+  --deep: #0b2f3a;
+  --lagoon: #14636c;
+  --sea: #dcefec;
+  --paper: #f4f9f8;
+  --gold: #d2a64a;
+  --ink: #12313b;
+  --muted: #4a6870;
+  --line: #c4dcd8;
+  --display: "Cormorant Garamond", "Times New Roman", serif;
+  --body: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+h1, h2, h3, p { margin: 0; }
+h2, h3 { text-wrap: balance; }
+a { color: var(--lagoon); }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+.wrap { width: 100%; max-width: 640px; margin: 0 auto; padding: 0 20px; }
+
+/* Bìa */
+.hero {
+  background: radial-gradient(120% 80% at 50% 0%, #17586a 0%, var(--deep) 62%);
+  color: #eaf5f3;
+  text-align: center;
+  padding: 56px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero .invite { font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: #a9d0cc; }
+.hero .guest {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(30px, 8vw, 40px);
+  color: var(--gold);
+  margin: 6px 0 4px;
+  overflow-wrap: anywhere;
+}
+.hero .lead { font-size: 15px; color: #c6e2de; }
+.names {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(54px, 17vw, 96px);
+  line-height: 1.02;
+  margin: 22px 0 10px;
+  letter-spacing: .01em;
+}
+.names .amp { display: block; font-style: italic; font-weight: 500; font-size: .5em; color: var(--gold); line-height: 1; margin: 2px 0; }
+.when {
+  display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 4px 14px;
+  font-size: 15px; letter-spacing: .06em; padding: 10px 18px;
+  border-top: 1px solid rgba(210,166,74,.55); border-bottom: 1px solid rgba(210,166,74,.55);
+  margin-top: 8px;
+}
+.sea { display: block; width: 100%; height: 90px; margin-top: 36px; }
+
+/* Phần chung */
+section { padding: 52px 0 8px; }
+.eyebrow { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--lagoon); font-weight: 600; text-align: center; }
+h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(32px, 8vw, 42px);
+  line-height: 1.12;
+  text-align: center;
+  margin: 6px 0 24px;
+  color: var(--deep);
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px 20px;
+}
+
+/* Đếm ngược */
+.count { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.count div { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 4px 10px; text-align: center; }
+.count b { display: block; font-family: var(--display); font-size: clamp(30px, 9vw, 44px); line-height: 1; color: var(--deep); font-variant-numeric: tabular-nums; }
+.count span { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.count-note { text-align: center; color: var(--muted); font-size: 14px; margin-top: 12px; }
+
+/* Thông tin */
+.facts { display: grid; gap: 18px; }
+.fact { display: grid; gap: 2px; text-align: center; }
+.fact + .fact { border-top: 1px solid var(--line); padding-top: 18px; }
+.fact small { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--lagoon); font-weight: 600; }
+.fact strong { font-family: var(--display); font-size: 26px; line-height: 1.2; color: var(--deep); font-weight: 600; }
+.fact span { color: var(--muted); font-size: 15px; }
+.btns { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 22px; }
+.btn {
+  appearance: none; border: 1.5px solid var(--lagoon); background: transparent; color: var(--lagoon);
+  font: 500 15px/1.2 var(--body); padding: 12px 18px; border-radius: 999px; cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center; min-height: 46px;
+}
+.btn.primary { background: var(--lagoon); color: #fff; }
+.btn:hover { filter: brightness(1.08); }
+.btn[disabled] { opacity: .6; cursor: default; }
+
+/* Bản đồ */
+.map { margin-top: 16px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: var(--sea); }
+.map iframe { display: block; width: 100%; height: 280px; border: 0; }
+
+/* Album */
+.gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.tile { position: relative; aspect-ratio: 4 / 5; border-radius: 12px; overflow: hidden; background: linear-gradient(160deg, #cfe8e4, #9fcbc6); display: grid; place-items: center; color: var(--lagoon); font-size: 13px; letter-spacing: .08em; }
+.tile:nth-child(3n+2) { background: linear-gradient(160deg, #f1e3bd, #dcc182); color: #6b5314; }
+.tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: none; }
+.tile img.ok { display: block; }
+.gal-note { text-align: center; color: var(--muted); font-size: 14px; margin-top: 12px; }
+
+/* Biểu mẫu */
+form { display: grid; gap: 16px; }
+label, legend { font-weight: 500; font-size: 14px; color: var(--deep); }
+fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 8px; }
+input[type="text"], input[type="number"], textarea {
+  width: 100%; font: 400 16px/1.4 var(--body); color: var(--ink); background: var(--paper);
+  border: 1.5px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-top: 6px;
+}
+textarea { min-height: 96px; resize: vertical; }
+.choices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.choice { position: relative; }
+.choice input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.choice span {
+  display: flex; align-items: center; justify-content: center; text-align: center; min-height: 48px; padding: 8px 10px;
+  border: 1.5px solid var(--line); border-radius: 10px; background: var(--paper); font-size: 15px; color: var(--ink);
+}
+.choice input:checked + span { border-color: var(--lagoon); background: var(--lagoon); color: #fff; font-weight: 500; }
+.choice input:focus-visible + span { outline: 3px solid var(--gold); outline-offset: 2px; }
+.status { font-size: 14px; min-height: 22px; color: var(--muted); }
+.status.ok { color: #1c6b3a; font-weight: 500; }
+.status.err { color: #a3321f; font-weight: 500; }
+.demo-note { font-size: 13px; color: var(--muted); background: var(--sea); border-radius: 10px; padding: 10px 12px; }
+
+/* Lưu bút */
+.wishes { display: grid; gap: 10px; margin-top: 22px; }
+.wish { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+.wish b { display: block; font-size: 14px; color: var(--lagoon); }
+.wish p { margin-top: 4px; overflow-wrap: anywhere; white-space: pre-wrap; }
+.empty { text-align: center; color: var(--muted); font-size: 15px; padding: 8px 0; }
+
+footer { margin-top: 56px; background: var(--deep); color: #b6d6d2; text-align: center; padding: 34px 20px 40px; }
+footer .names-s { font-family: var(--display); font-size: 30px; color: #fff; font-weight: 600; }
+footer p { font-size: 14px; margin-top: 4px; }
+
+@media (min-width: 560px) {
+  .gallery { grid-template-columns: repeat(3, 1fr); }
+  .card { padding: 28px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="invite">Trân trọng kính mời</p>
+    <p class="guest" id="guest">Quý Khách</p>
+    <p class="lead">tới dự lễ cưới của</p>
+    <h1 class="names">Peter<span class="amp">&amp;</span>Smith</h1>
+    <p class="when"><span>Chủ Nhật</span><span>16:00</span><span>01 · 01 · 2040</span></p>
+  </div>
+  <svg class="sea" viewBox="0 0 800 90" preserveAspectRatio="none" aria-hidden="true">
+    <circle cx="400" cy="30" r="22" fill="#d2a64a" opacity=".9"/>
+    <path d="M0 48 C 100 28 200 68 300 48 S 500 28 600 48 S 750 66 800 52 V90 H0Z" fill="#14636c" opacity=".55"/>
+    <path d="M0 62 C 120 44 220 80 340 62 S 560 44 680 62 S 770 74 800 66 V90 H0Z" fill="#1d7f88" opacity=".8"/>
+    <path d="M0 76 C 140 62 240 88 380 76 S 620 62 800 78 V90 H0Z" fill="#f4f9f8"/>
+  </svg>
+</header>
+
+<main>
+  <section id="countdown" aria-labelledby="t-count">
+    <div class="wrap">
+      <p class="eyebrow">Đếm ngược</p>
+      <h2 id="t-count">Ngày chúng mình về chung một nhà</h2>
+      <div class="count" role="timer" aria-live="off">
+        <div><b id="c-d">0</b><span>ngày</span></div>
+        <div><b id="c-h">0</b><span>giờ</span></div>
+        <div><b id="c-m">0</b><span>phút</span></div>
+        <div><b id="c-s">0</b><span>giây</span></div>
+      </div>
+      <p class="count-note" id="count-note"></p>
+    </div>
+  </section>
+
+  <section id="le" aria-labelledby="t-le">
+    <div class="wrap">
+      <p class="eyebrow">Lễ cưới</p>
+      <h2 id="t-le">Thời gian và địa điểm</h2>
+      <div class="card">
+        <div class="facts">
+          <div class="fact">
+            <small>Thời gian</small>
+            <strong>16:00, Chủ Nhật, 01/01/2040</strong>
+            <span>Nhằm ngày 17 tháng 11 năm Kỷ Mùi</span>
+          </div>
+          <div class="fact">
+            <small>Địa điểm</small>
+            <strong>InterContinental Phu Quoc Long Beach Resort</strong>
+            <span>Bãi Trường, Dương Tơ, Phú Quốc</span>
+          </div>
+        </div>
+        <div class="btns">
+          <a class="btn primary" id="btn-map" href="https://share.google/fiGvUyqKMxPz72NJH" target="_blank" rel="noopener">Chỉ đường trên Google Maps</a>
+          <a class="btn" id="btn-gcal" href="#" target="_blank" rel="noopener">Thêm vào Google Lịch</a>
+          <button class="btn" id="btn-ics" type="button">Tải file lịch (.ics)</button>
+        </div>
+        <p class="status" id="ics-status" role="status"></p>
+      </div>
+      <div class="map">
+        <iframe title="Bản đồ InterContinental Phu Quoc Long Beach Resort" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=InterContinental+Phu+Quoc+Long+Beach+Resort&amp;output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="album" aria-labelledby="t-album">
+    <div class="wrap">
+      <p class="eyebrow">Album</p>
+      <h2 id="t-album">Ảnh cưới của chúng mình</h2>
+      <div class="gallery" id="gallery"></div>
+      <p class="gal-note">Bỏ ảnh vào thư mục <code>anh</code> với tên <code>1.jpg</code>, <code>2.jpg</code>… ảnh sẽ tự thay các ô màu này.</p>
+    </div>
+  </section>
+
+  <section id="rsvp" aria-labelledby="t-rsvp">
+    <div class="wrap">
+      <p class="eyebrow">Xác nhận tham dự</p>
+      <h2 id="t-rsvp">Bạn có đến được không?</h2>
+      <div class="card">
+        <form id="rsvp-form" novalidate>
+          <div>
+            <label for="r-name">Họ và tên</label>
+            <input id="r-name" name="name" type="text" autocomplete="name" maxlength="100" required>
+          </div>
+          <fieldset>
+            <legend>Bạn là khách của</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="side" value="Nhà trai" id="r-side-trai"><span>Chú rể Peter</span></label>
+              <label class="choice"><input type="radio" name="side" value="Nhà gái" id="r-side-gai"><span>Cô dâu Smith</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Bạn sẽ</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="attending" value="Có" id="r-yes" checked><span>Có tham dự</span></label>
+              <label class="choice"><input type="radio" name="attending" value="Không" id="r-no"><span>Rất tiếc, không đến được</span></label>
+            </div>
+          </fieldset>
+          <div id="guests-row">
+            <label for="r-guests">Số người đi cùng (tính cả bạn)</label>
+            <input id="r-guests" name="guests" type="number" min="1" max="10" value="1" inputmode="numeric">
+          </div>
+          <div>
+            <label for="r-msg">Lời nhắn (không bắt buộc)</label>
+            <textarea id="r-msg" name="message" maxlength="500"></textarea>
+          </div>
+          <button class="btn primary" id="r-submit" type="submit">Gửi xác nhận</button>
+          <p class="status" id="r-status" role="status"></p>
+          <p class="demo-note" id="demo-note" hidden>Bản xem thử: xác nhận chỉ được lưu trên thiết bị này. Dán link Google Apps Script vào <code>CONFIG.RSVP_URL</code> để nhận câu trả lời của khách.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="luubut" aria-labelledby="t-wish">
+    <div class="wrap">
+      <p class="eyebrow">Sổ lưu bút</p>
+      <h2 id="t-wish">Gửi lời chúc tới Peter &amp; Smith</h2>
+      <div class="card">
+        <form id="wish-form" novalidate>
+          <div>
+            <label for="w-name">Tên của bạn</label>
+            <input id="w-name" type="text" maxlength="100" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="w-msg">Lời chúc</label>
+            <textarea id="w-msg" maxlength="500" required></textarea>
+          </div>
+          <button class="btn primary" type="submit">Gửi lời chúc</button>
+          <p class="status" id="w-status" role="status"></p>
+        </form>
+      </div>
+      <div class="wishes" id="wishes" aria-live="polite"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p class="names-s">Peter &amp; Smith</p>
+  <p>16:00 · 01/01/2040 · Phú Quốc</p>
+  <p>Sự hiện diện của bạn là niềm vui của chúng mình.</p>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ====== CẤU HÌNH: sửa ở đây ====== */
+  var CONFIG = {
+    title: "Lễ cưới Peter & Smith",
+    startISO: "2040-01-01T16:00:00+07:00",
+    startUTC: "20400101T090000Z",   // 16:00 giờ Việt Nam = 09:00 UTC
+    endUTC:   "20400101T130000Z",   // kết thúc 20:00 giờ Việt Nam
+    venue: "InterContinental Phu Quoc Long Beach Resort, Bãi Trường, Dương Tơ, Phú Quốc",
+    photoCount: 6,                  // số ảnh trong thư mục anh/ (1.jpg, 2.jpg, ...)
+    RSVP_URL: ""                    // dán link Google Apps Script (kết thúc bằng /exec)
+  };
+
+  function $(id) { return document.getElementById(id); }
+  function pad(n) { return n < 10 ? "0" + n : String(n); }
+
+  /* ----- Tên khách và bên mời từ link: ?to=Bạn%20Hải&ben=trai ----- */
+  var params = new URLSearchParams(location.search);
+  var to = (params.get("to") || "").trim().slice(0, 60);
+  if (to) { $("guest").textContent = to; $("r-name").value = to; $("w-name").value = to; }
+  var ben = params.get("ben");
+  if (ben === "trai") $("r-side-trai").checked = true;
+  if (ben === "gai") $("r-side-gai").checked = true;
+
+  /* ----- Đếm ngược ----- */
+  var target = new Date(CONFIG.startISO).getTime();
+  function tick() {
+    var left = target - Date.now();
+    if (left <= 0) {
+      $("c-d").textContent = "0"; $("c-h").textContent = "00"; $("c-m").textContent = "00"; $("c-s").textContent = "00";
+      $("count-note").textContent = "Hôm nay là ngày vui của Peter & Smith.";
+      return;
+    }
+    var s = Math.floor(left / 1000);
+    var d = Math.floor(s / 86400); s -= d * 86400;
+    var h = Math.floor(s / 3600); s -= h * 3600;
+    var m = Math.floor(s / 60); s -= m * 60;
+    $("c-d").textContent = String(d);
+    $("c-h").textContent = pad(h);
+    $("c-m").textContent = pad(m);
+    $("c-s").textContent = pad(s);
+    $("count-note").textContent = "Còn " + d + " ngày nữa là tới lễ cưới.";
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  /* ----- Thêm vào lịch ----- */
+  var details = "Trân trọng kính mời bạn tới dự lễ cưới của Peter & Smith.";
+  $("btn-gcal").href = "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+    "&text=" + encodeURIComponent(CONFIG.title) +
+    "&dates=" + CONFIG.startUTC + "/" + CONFIG.endUTC +
+    "&details=" + encodeURIComponent(details) +
+    "&location=" + encodeURIComponent(CONFIG.venue);
+
+  function icsEscape(t) { return t.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n"); }
+  $("btn-ics").addEventListener("click", function () {
+    var ics = [
+      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Thiep cuoi Peter va Smith//VI", "CALSCALE:GREGORIAN",
+      "BEGIN:VEVENT",
+      "UID:peter-smith-20400101@thiep-cuoi",
+      "DTSTAMP:" + new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d+/, ""),
+      "DTSTART:" + CONFIG.startUTC,
+      "DTEND:" + CONFIG.endUTC,
+      "SUMMARY:" + icsEscape(CONFIG.title),
+      "LOCATION:" + icsEscape(CONFIG.venue),
+      "DESCRIPTION:" + icsEscape(details),
+      "BEGIN:VALARM", "TRIGGER:-P1D", "ACTION:DISPLAY", "DESCRIPTION:Ngày mai là lễ cưới Peter & Smith", "END:VALARM",
+      "END:VEVENT", "END:VCALENDAR"
+    ].join("\r\n");
+    try {
+      var url = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
+      var a = document.createElement("a");
+      a.href = url; a.download = "le-cuoi-peter-smith.ics";
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+      $("ics-status").textContent = "";
+    } catch (e) {
+      $("ics-status").textContent = "Không tải được file. Hãy dùng nút Thêm vào Google Lịch.";
+    }
+  });
+
+  /* ----- Album ----- */
+  var gallery = $("gallery");
+  for (var i = 1; i <= CONFIG.photoCount; i++) {
+    var tile = document.createElement("div");
+    tile.className = "tile";
+    tile.textContent = "Ảnh " + i;
+    var img = new Image();
+    img.alt = "Ảnh cưới " + i;
+    img.loading = "lazy";
+    img.onload = (function (el, t) { return function () { el.className = "ok"; t.textContent = ""; t.appendChild(el); }; })(img, tile);
+    img.src = "anh/" + i + ".jpg";
+    gallery.appendChild(tile);
+  }
+
+  /* ----- Lưu trữ: máy khách + Google Sheets (nếu có RSVP_URL) ----- */
+  function lsGet(k) { try { return JSON.parse(localStorage.getItem(k) || "[]"); } catch (e) { return []; } }
+  function lsPush(k, v) { try { var a = lsGet(k); a.push(v); localStorage.setItem(k, JSON.stringify(a)); } catch (e) {} }
+
+  function send(payload) {
+    if (!CONFIG.RSVP_URL) return Promise.resolve(false);
+    return fetch(CONFIG.RSVP_URL, {
+      method: "POST", mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload)
+    }).then(function () { return true; });
+  }
+
+  if (!CONFIG.RSVP_URL) $("demo-note").hidden = false;
+
+  /* ----- Xác nhận tham dự ----- */
+  function syncGuests() { $("guests-row").hidden = $("r-no").checked; }
+  $("r-yes").addEventListener("change", syncGuests);
+  $("r-no").addEventListener("change", syncGuests);
+
+  $("rsvp-form").addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var st = $("r-status");
+    var name = $("r-name").value.trim();
+    var side = (document.querySelector('input[name="side"]:checked') || {}).value || "";
+    var attending = document.querySelector('input[name="attending"]:checked').value;
+    var guests = attending === "Có" ? Math.max(1, Math.min(10, parseInt($("r-guests").value, 10) || 1)) : 0;
+    st.className = "status";
+    if (!name) { st.className = "status err"; st.textContent = "Bạn hãy nhập họ và tên."; $("r-name").focus(); return; }
+    if (!side) { st.className = "status err"; st.textContent = "Bạn hãy chọn là khách của chú rể hay cô dâu."; return; }
+    var payload = { type: "rsvp", name: name, side: side, attending: attending, guests: guests, message: $("r-msg").value.trim(), at: new Date().toISOString() };
+    lsPush("rsvp", payload);
+    $("r-submit").disabled = true;
+    st.textContent = "Đang gửi…";
+    send(payload).then(function (sent) {
+      st.className = "status ok";
+      st.textContent = attending === "Có"
+        ? "Cảm ơn " + name + ". Peter & Smith hẹn gặp bạn!"
+        : "Cảm ơn " + name + " đã báo. Chúng mình sẽ nhớ lời chúc của bạn.";
+      if (!sent) st.textContent += " (Bản xem thử, chưa gửi tới cô dâu chú rể.)";
+    }).catch(function () {
+      st.className = "status err";
+      st.textContent = "Chưa gửi được. Bạn kiểm tra mạng rồi bấm gửi lại nhé.";
+    }).then(function () { $("r-submit").disabled = false; });
+  });
+
+  /* ----- Lưu bút ----- */
+  var remote = [];
+  function renderWishes() {
+    var box = $("wishes");
+    box.textContent = "";
+    var seen = {};
+    var all = remote.concat(lsGet("guestbook").slice().reverse());
+    var shown = 0;
+    all.forEach(function (w) {
+      var key = w.name + "|" + w.message;
+      if (seen[key]) return;
+      seen[key] = true;
+      var el = document.createElement("div"); el.className = "wish";
+      var b = document.createElement("b"); b.textContent = w.name;
+      var p = document.createElement("p"); p.textContent = w.message;
+      el.appendChild(b); el.appendChild(p); box.appendChild(el);
+      shown++;
+    });
+    if (!shown) {
+      var e = document.createElement("p"); e.className = "empty";
+      e.textContent = "Chưa có lời chúc nào. Bạn hãy là người đầu tiên.";
+      box.appendChild(e);
+    }
+  }
+  renderWishes();
+
+  if (CONFIG.RSVP_URL) {
+    fetch(CONFIG.RSVP_URL).then(function (r) { return r.json(); }).then(function (rows) {
+      if (Array.isArray(rows)) {
+        remote = rows.filter(function (r) { return r && r.name && r.message; })
+          .map(function (r) { return { name: String(r.name), message: String(r.message) }; });
+        renderWishes();
+      }
+    }).catch(function () {});
+  }
+
+  $("wish-form").addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var st = $("w-status");
+    var name = $("w-name").value.trim();
+    var msg = $("w-msg").value.trim();
+    st.className = "status";
+    if (!name || !msg) { st.className = "status err"; st.textContent = "Bạn hãy nhập tên và lời chúc."; return; }
+    var payload = { type: "guestbook", name: name, message: msg, at: new Date().toISOString() };
+    lsPush("guestbook", payload);
+    renderWishes();
+    $("w-msg").value = "";
+    send(payload).then(function (sent) {
+      st.className = "status ok";
+      st.textContent = sent ? "Cảm ơn lời chúc của bạn." : "Cảm ơn bạn. (Bản xem thử, lời chúc chỉ hiện trên thiết bị này.)";
+    }).catch(function () {
+      st.className = "status err";
+      st.textContent = "Lời chúc hiện trên máy bạn nhưng chưa gửi được. Hãy thử lại sau.";
+    });
+  });
+})();
+</script>
+</body>
+</html>
